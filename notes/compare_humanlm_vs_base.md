@@ -24,7 +24,7 @@ Jadi ini perbandingan yang paling fair untuk POC awal.
 ```bash
 cd ~/humanlm-research
 source ~/humanlm-bench/bin/activate
-python3 run_humanlm_poc.py --model snap-stanford/humanlm-opinion
+python3 run_humanlm_poc.py --model snap-stanford/humanlm-opinion --max-new-tokens 384
 ```
 
 ### 2. Base Model
@@ -32,7 +32,7 @@ python3 run_humanlm_poc.py --model snap-stanford/humanlm-opinion
 ```bash
 cd ~/humanlm-research
 source ~/humanlm-bench/bin/activate
-python3 run_humanlm_poc.py --model Qwen/Qwen3-8B
+python3 run_humanlm_poc.py --model Qwen/Qwen3-8B --max-new-tokens 384
 ```
 
 ## Lokasi Output
@@ -64,6 +64,14 @@ Yang ingin kita lihat:
 - Base model mungkin lebih:
   - terlalu lurus / terlalu bersih
   - atau justru lebih sering menghasilkan kontradiksi yang tidak plausible
+
+## Catatan Prompting
+
+Versi compare ini sengaja:
+
+- tidak memblokir reasoning atau `<think>`
+- tetapi memberi instruksi keras bahwa model harus menutup jawabannya dengan JSON final
+- dan memakai `max_new_tokens` yang lebih besar agar base model punya ruang menyelesaikan output
 
 ## Format Analisis Manual
 

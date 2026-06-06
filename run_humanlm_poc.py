@@ -47,6 +47,14 @@ Return valid JSON with exactly these keys:
 - "reason": a short first-person justification
 - "dissonance_type": choose one of ["consistent", "human_like_dissonance", "artifact_like"]
 - "confidence": number from 0 to 1
+
+Important instructions:
+- You may think step by step before answering if needed.
+- But your final answer must end with one valid JSON object.
+- Do not leave the response unfinished.
+- Do not stop after analysis.
+- Do not return prose after the final JSON object.
+- Make sure the JSON object is complete and closed properly.
 """
 
 
@@ -55,7 +63,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--scenarios", type=Path, default=DEFAULT_SCENARIOS)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
-    parser.add_argument("--max-new-tokens", type=int, default=160)
+    parser.add_argument("--max-new-tokens", type=int, default=384)
     return parser.parse_args()
 
 
