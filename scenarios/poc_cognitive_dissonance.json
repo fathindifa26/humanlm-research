@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ev_cost_tradeoff",
+    "domain": "transport",
+    "title": "EV bagus tapi mahal",
+    "knowledge": [
+      "Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.",
+      "Harga mobil listrik masih lebih mahal untuk budget orang ini.",
+      "Orang ini harus hati-hati soal pengeluaran keluarga."
+    ],
+    "opinion": "Saya mendukung penggunaan mobil listrik.",
+    "question": "Jika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?"
+  },
+  {
+    "id": "healthy_food_budget",
+    "domain": "food",
+    "title": "Ingin hidup sehat tapi uang terbatas",
+    "knowledge": [
+      "Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.",
+      "Fast food lebih murah dan lebih mudah diakses.",
+      "Ia tahu pola makan sehat penting untuk kesehatan jangka panjang."
+    ],
+    "opinion": "Saya ingin makan lebih sehat.",
+    "question": "Kalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?"
+  },
+  {
+    "id": "privacy_convenience_app",
+    "domain": "technology",
+    "title": "Privasi versus kenyamanan aplikasi",
+    "knowledge": [
+      "Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.",
+      "Aplikasi ini sangat memudahkan pekerjaan hariannya.",
+      "Alternatif yang lebih privat jauh lebih ribet dipakai."
+    ],
+    "opinion": "Privasi digital itu penting.",
+    "question": "Apakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?"
+  },
+  {
+    "id": "work_life_balance_promotion",
+    "domain": "career",
+    "title": "Work-life balance versus promosi",
+    "knowledge": [
+      "Promosi jabatan ini akan menaikkan gaji secara signifikan.",
+      "Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.",
+      "Ia sering bilang waktu bersama keluarga sangat penting."
+    ],
+    "opinion": "Saya percaya work-life balance itu penting.",
+    "question": "Jika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?"
+  }
+]
