@@ -1,0 +1,51 @@
+{
+  "model": "snap-stanford/humanlm-opinion",
+  "run_id": "20260606_161616",
+  "scenario_file": "scenarios/poc_cognitive_dissonance.json",
+  "results": [
+    {
+      "scenario_id": "ev_cost_tradeoff",
+      "title": "EV bagus tapi mahal",
+      "domain": "transport",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.\n- Harga mobil listrik masih lebih mahal untuk budget orang ini.\n- Orang ini harus hati-hati soal pengeluaran keluarga.\n\nOpinion:\n- Saya mendukung penggunaan mobil listrik.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nJika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "</think>\n\n{\n  \"behavior\": \"Ia kemungkinan akan mempertimbangkan mobil listrik, tetapi mungkin tidak membelinya segera karena harga yang masih mahal\",\n  \"reason\": \"Saya mendukung penggunaan mobil listrik karena lebih baik untuk lingkungan, tetapi harga yang mahal membuatnya sulit untuk dibeli dengan budget saat ini\",\n  \"dissonance_type\": \"human_like_dissonance\",\n  \"confidence\": 0.8\n}",
+      "input_tokens": 219,
+      "new_tokens": 107,
+      "seconds": 148.55,
+      "tokens_per_second": 0.72
+    },
+    {
+      "scenario_id": "healthy_food_budget",
+      "title": "Ingin hidup sehat tapi uang terbatas",
+      "domain": "food",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.\n- Fast food lebih murah dan lebih mudah diakses.\n- Ia tahu pola makan sehat penting untuk kesehatan jangka panjang.\n\nOpinion:\n- Saya ingin makan lebih sehat.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nKalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "</think>\n\n{\n  \"behavior\": \"Ia kemungkinan memilih makanan fast food atau makanan yang lebih murah meskipun ingin makan sehat\",\n  \"reason\": \"Saya ingin makan lebih sehat, tapi akhir bulan uang menipis, jadi mungkin memilih makanan yang lebih murah dan lebih mudah diakses\",\n  \"dissonance_type\": \"human_like_dissonance\",\n  \"confidence\": 0.8\n}",
+      "input_tokens": 232,
+      "new_tokens": 108,
+      "seconds": 111.98,
+      "tokens_per_second": 0.964
+    },
+    {
+      "scenario_id": "privacy_convenience_app",
+      "title": "Privasi versus kenyamanan aplikasi",
+      "domain": "technology",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.\n- Aplikasi ini sangat memudahkan pekerjaan hariannya.\n- Alternatif yang lebih privat jauh lebih ribet dipakai.\n\nOpinion:\n- Privasi digital itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nApakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "</think>\n\n{\n  \"behavior\": \"Ia tetap memakai aplikasi itu, meskipun ada kekhawatiran tentang privasi.\",\n  \"reason\": \"Aplikasi ini sangat memudahkan pekerjaan harian saya, dan alternatif yang lebih privat jauh lebih ribet dipakai.\",\n  \"dissonance_type\": \"human_like_dissonance\",\n  \"confidence\": 0.8\n}",
+      "input_tokens": 214,
+      "new_tokens": 94,
+      "seconds": 98.85,
+      "tokens_per_second": 0.951
+    },
+    {
+      "scenario_id": "work_life_balance_promotion",
+      "title": "Work-life balance versus promosi",
+      "domain": "career",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Promosi jabatan ini akan menaikkan gaji secara signifikan.\n- Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.\n- Ia sering bilang waktu bersama keluarga sangat penting.\n\nOpinion:\n- Saya percaya work-life balance itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nJika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "</think>\n\n{\n  \"behavior\": \"Ia mungkin menolak promosi tersebut\",\n  \"reason\": \"Saya merasa work-life balance lebih penting daripada gaji yang lebih tinggi, dan promosi ini akan mengurangi waktu bersama keluarga\",\n  \"dissonance_type\": \"human_like_dissonance\",\n  \"confidence\": 0.8\n}",
+      "input_tokens": 224,
+      "new_tokens": 84,
+      "seconds": 92.72,
+      "tokens_per_second": 0.906
+    }
+  ]
+}
