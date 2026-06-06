@@ -1,0 +1,52 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "model_slug": "qwen__qwen3_8b",
+  "run_id": "20260606_164348",
+  "scenario_file": "scenarios/poc_cognitive_dissonance.json",
+  "results": [
+    {
+      "scenario_id": "ev_cost_tradeoff",
+      "title": "EV bagus tapi mahal",
+      "domain": "transport",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.\n- Harga mobil listrik masih lebih mahal untuk budget orang ini.\n- Orang ini harus hati-hati soal pengeluaran keluarga.\n\nOpinion:\n- Saya mendukung penggunaan mobil listrik.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nJika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "<think>\nOkay, let's tackle this. The user is simulating a human with specific knowledge and opinions. The question is about whether they'd buy an electric car this year and why, considering their constraints.\n\nFirst, the knowledge points: electric cars are better for the environment, but they're more expensive. The person is budget-conscious and needs to be careful with family expenses. Their opinion is in favor of electric vehicles.\n\nSo, the conflict here is between environmental support and financial constraints. The person wants to support electric cars but can't afford them. So, what's the likely choice? Maybe they'd choose a used electric car to save money, or maybe a hybrid? Wait, the question is about buying a car this year. If they can't afford a new electric car, maybe they",
+      "input_tokens": 220,
+      "new_tokens": 160,
+      "seconds": 161.76,
+      "tokens_per_second": 0.989
+    },
+    {
+      "scenario_id": "healthy_food_budget",
+      "title": "Ingin hidup sehat tapi uang terbatas",
+      "domain": "food",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.\n- Fast food lebih murah dan lebih mudah diakses.\n- Ia tahu pola makan sehat penting untuk kesehatan jangka panjang.\n\nOpinion:\n- Saya ingin makan lebih sehat.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nKalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "<think>\nOkay, let's tackle this. The user wants to know what food someone might buy when they're at the end of the month and their money is running low. The person has knowledge about healthy food being more expensive in their area, fast food being cheaper and more accessible, and they know that healthy eating is important for long-term health. Their opinion is that they want to eat healthier.\n\nSo, the conflict here is between wanting healthy food and the financial constraint. The person might be tempted to go for cheaper options like fast food, but they also know the importance of healthy eating. But since they're in a situation where money is tight, they might choose fast food even though it's not ideal. However, maybe they try to find a middle ground, like buying cheaper healthy options.",
+      "input_tokens": 233,
+      "new_tokens": 160,
+      "seconds": 149.92,
+      "tokens_per_second": 1.067
+    },
+    {
+      "scenario_id": "privacy_convenience_app",
+      "title": "Privasi versus kenyamanan aplikasi",
+      "domain": "technology",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.\n- Aplikasi ini sangat memudahkan pekerjaan hariannya.\n- Alternatif yang lebih privat jauh lebih ribet dipakai.\n\nOpinion:\n- Privasi digital itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nApakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "<think>\nOkay, let's tackle this. The user is simulating a human's internal state. The knowledge points out that the free app collects a lot of personal data, but it's very convenient for their daily tasks. The alternatives are more private but more complicated. The opinion is that digital privacy is important.\n\nSo the question is whether they'll continue using the app and how they'd justify it. The answer needs to reflect a possible conflict between convenience and privacy. \n\nFirst, the behavior: they might continue using the app despite privacy concerns. The reason would likely mention the convenience and the hassle of alternatives. But there's dissonance here between valuing privacy and the practicality of the app. \n\nDissonance type: \"human_like_dissonance\" because the person is aware",
+      "input_tokens": 215,
+      "new_tokens": 160,
+      "seconds": 144.47,
+      "tokens_per_second": 1.107
+    },
+    {
+      "scenario_id": "work_life_balance_promotion",
+      "title": "Work-life balance versus promosi",
+      "domain": "career",
+      "prompt": "You are simulating one human user.\n\nBelow is the user's internal state.\n\nKnowledge:\n- Promosi jabatan ini akan menaikkan gaji secara signifikan.\n- Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.\n- Ia sering bilang waktu bersama keluarga sangat penting.\n\nOpinion:\n- Saya percaya work-life balance itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel like a believable human answer.\n\nQuestion:\nJika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n- \"dissonance_type\": choose one of [\"consistent\", \"human_like_dissonance\", \"artifact_like\"]\n- \"confidence\": number from 0 to 1\n",
+      "raw_output": "<think>\nOkay, let's tackle this. The user is simulating a human making a decision about a promotion. The internal state has knowledge and opinion points. The knowledge says the promotion would significantly increase the salary, but the new position requires longer hours and higher stress. The person also values family time a lot. Their opinion is that work-life balance is important.\n\nSo, the question is, if offered the promotion, what would they likely do and why? The answer needs to be in JSON with specific keys. \n\nFirst, the behavior. The person values family and work-life balance, but the promotion offers a higher salary. However, the new role has longer hours and more stress, which might conflict with family time. So, they might decline the promotion to maintain their work-life balance. But",
+      "input_tokens": 225,
+      "new_tokens": 160,
+      "seconds": 143.66,
+      "tokens_per_second": 1.114
+    }
+  ]
+}
