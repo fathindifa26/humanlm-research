@@ -12,6 +12,15 @@ DEFAULT_SCENARIOS = Path("scenarios/poc_cognitive_dissonance.json")
 DEFAULT_OUTPUT_DIR = Path("outputs")
 
 
+def slugify_model_name(model_name: str) -> str:
+    return (
+        model_name.lower()
+        .replace("/", "__")
+        .replace("-", "_")
+        .replace(".", "_")
+    )
+
+
 def build_prompt(scenario: dict) -> str:
     knowledge_lines = "\n".join(
         f"- {item}" for item in scenario.get("knowledge", [])
@@ -78,7 +87,8 @@ def main() -> None:
     )
 
     run_id = time.strftime("%Y%m%d_%H%M%S")
-    output_path = args.output_dir / f"humanlm_poc_{run_id}.json"
+    model_slug = slugify_model_name(args.model)
+    output_path = args.output_dir / f"poc_{model_slug}_{run_id}.json"
     results = []
 
     for scenario in scenarios:
@@ -119,6 +129,7 @@ def main() -> None:
 
     summary = {
         "model": args.model,
+        "model_slug": model_slug,
         "run_id": run_id,
         "scenario_file": str(args.scenarios),
         "results": results,
