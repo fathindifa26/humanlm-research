@@ -67,11 +67,7 @@ def build_revb_prompt(scenario: dict) -> str:
     knowledge_lines = "\n".join(
         f"- {item}" for item in scenario.get("knowledge", [])
     )
-    return f"""You are simulating one human user.
-
-Below is the person's internal state.
-
-Knowledge:
+    return f"""Knowledge:
 {knowledge_lines}
 
 Opinion:
@@ -80,17 +76,7 @@ Opinion:
 Question:
 {scenario["question"]}
 
-Continue the person's answer naturally.
-
-Important instructions:
-- Write only the continuation of the answer.
-- Do not explain the task.
-- Do not analyze.
-- Do not say "the user", "the person", or "this person".
-- Do not use `<think>` or hidden reasoning.
-- Stay in character and continue the answer directly.
-
-Answer:
+First-person answer:
 I would"""
 
 
@@ -101,6 +87,13 @@ def build_inputs(tokenizer: AutoTokenizer, prompt: str) -> dict[str, torch.Tenso
         add_generation_prompt=True,
         tokenize=True,
         return_dict=True,
+        return_tensors="pt",
+    )
+
+
+def build_plain_inputs(tokenizer: AutoTokenizer, prompt: str) -> dict[str, torch.Tensor]:
+    return tokenizer(
+        prompt,
         return_tensors="pt",
     )
 
@@ -151,7 +144,7 @@ def run_revb(
     print_token_steps: bool,
 ) -> dict:
     prompt = build_revb_prompt(scenario)
-    inputs = build_inputs(tokenizer, prompt)
+    inputs = build_plain_inputs(tokenizer, prompt)
     input_len = inputs["input_ids"].shape[-1]
 
     gen_t0 = time.time()
