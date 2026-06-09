@@ -15,6 +15,8 @@ DEFAULT_COMPARE_MODELS = [
 ]
 DEFAULT_SCENARIOS = Path("scenarios/poc_cognitive_dissonance.json")
 DEFAULT_OUTPUT_DIR = Path("outputs")
+DEFAULT_STAA_MAX_NEW_TOKENS = 512
+DEFAULT_REVB_MAX_NEW_TOKENS = 512
 
 
 def slugify_model_name(model_name: str) -> str:
@@ -102,6 +104,19 @@ def decode_token(tokenizer: AutoTokenizer, token_id: int) -> str:
     return tokenizer.decode([token_id], skip_special_tokens=False)
 
 
+def build_generation_kwargs(
+    tokenizer: AutoTokenizer,
+    max_new_tokens: int,
+) -> dict:
+    return {
+        "max_new_tokens": max_new_tokens,
+        "do_sample": False,
+        "use_cache": True,
+        "eos_token_id": tokenizer.eos_token_id,
+        "pad_token_id": tokenizer.eos_token_id,
+    }
+
+
 def run_staa(
     model: AutoModelForCausalLM,
     tokenizer: AutoTokenizer,
@@ -116,11 +131,7 @@ def run_staa(
     with torch.inference_mode():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=False,
-            use_cache=True,
-            eos_token_id=tokenizer.eos_token_id,
-            pad_token_id=tokenizer.eos_token_id,
+            **build_generation_kwargs(tokenizer, max_new_tokens),
         )
     gen_s = time.time() - gen_t0
     text = tokenizer.decode(outputs[0][input_len:], skip_special_tokens=True).strip()
@@ -151,13 +162,9 @@ def run_revb(
     with torch.inference_mode():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=False,
-            use_cache=True,
+            **build_generation_kwargs(tokenizer, max_new_tokens),
             output_scores=True,
             return_dict_in_generate=True,
-            eos_token_id=tokenizer.eos_token_id,
-            pad_token_id=tokenizer.eos_token_id,
         )
     gen_s = time.time() - gen_t0
 
@@ -209,6 +216,7 @@ def run_revb(
 
     return {
         "prompt": prompt,
+        "raw_output": continuation_text,
         "continuation_text": continuation_text,
         "input_tokens": int(input_len),
         "new_tokens": int(generated_ids.shape[-1]),
@@ -233,8 +241,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--scenarios", type=Path, default=DEFAULT_SCENARIOS)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
-    parser.add_argument("--max-new-tokens", type=int, default=96)
-    parser.add_argument("--revb-max-new-tokens", type=int, default=8)
+    parser.add_argument("--max-new-tokens", type=int, default=DEFAULT_STAA_MAX_NEW_TOKENS)
+    parser.add_argument("--revb-max-new-tokens", type=int, default=DEFAULT_REVB_MAX_NEW_TOKENS)
     parser.add_argument("--revb-top-k", type=int, default=5)
     parser.add_argument(
         "--print-revb-steps",
