@@ -52,12 +52,14 @@ Return valid JSON with exactly these keys:
 - "reason": a short first-person justification
 
 Important instructions:
-- You may think step by step before answering if needed.
-- But your final answer must end with one valid JSON object.
-- Do not leave the response unfinished.
-- Do not stop after analysis.
-- Do not return prose after the final JSON object.
-- Make sure the JSON object is complete and closed properly.
+- Write only one JSON object.
+- Start directly with `{{`.
+- Do not include analysis.
+- Do not include chain-of-thought.
+- Do not explain the task.
+- Do not write any text before the JSON object.
+- Do not write any text after the JSON object.
+- Keep the answer short and complete.
 """
 
 
@@ -78,10 +80,18 @@ Opinion:
 Question:
 {scenario["question"]}
 
-Complete the next answer naturally as this person.
+Continue the person's answer naturally.
+
+Important instructions:
+- Write only the continuation of the answer.
+- Do not explain the task.
+- Do not analyze.
+- Do not say "the user", "the person", or "this person".
+- Do not use `<think>` or hidden reasoning.
+- Stay in character and continue the answer directly.
 
 Answer:
-Therefore, this person would"""
+I would"""
 
 
 def build_inputs(tokenizer: AutoTokenizer, prompt: str) -> dict[str, torch.Tensor]:
@@ -116,6 +126,8 @@ def run_staa(
             max_new_tokens=max_new_tokens,
             do_sample=False,
             use_cache=True,
+            eos_token_id=tokenizer.eos_token_id,
+            pad_token_id=tokenizer.eos_token_id,
         )
     gen_s = time.time() - gen_t0
     text = tokenizer.decode(outputs[0][input_len:], skip_special_tokens=True).strip()
@@ -150,6 +162,8 @@ def run_revb(
             use_cache=True,
             output_scores=True,
             return_dict_in_generate=True,
+            eos_token_id=tokenizer.eos_token_id,
+            pad_token_id=tokenizer.eos_token_id,
         )
     gen_s = time.time() - gen_t0
 
@@ -205,8 +219,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--scenarios", type=Path, default=DEFAULT_SCENARIOS)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
-    parser.add_argument("--max-new-tokens", type=int, default=256)
-    parser.add_argument("--revb-max-new-tokens", type=int, default=12)
+    parser.add_argument("--max-new-tokens", type=int, default=96)
+    parser.add_argument("--revb-max-new-tokens", type=int, default=8)
     parser.add_argument("--revb-top-k", type=int, default=5)
     return parser.parse_args()
 

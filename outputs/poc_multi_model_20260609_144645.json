@@ -1,0 +1,3378 @@
+(humanlm-bench) fathin_robbani@data-processing:~/humanlm-research/outputs$ cat poc_multi_model_20260609_144645.json
+{
+  "run_id": "20260609_144645",
+  "scenario_file": "scenarios/poc_cognitive_dissonance.json",
+  "models_run": [
+    "snap-stanford/humanlm-opinion",
+    "Qwen/Qwen3-8B"
+  ],
+  "staa_max_new_tokens": 256,
+  "revb_max_new_tokens": 12,
+  "revb_top_k": 5,
+  "model_runs": [
+    {
+      "model": "snap-stanford/humanlm-opinion",
+      "model_slug": "snap_stanford__humanlm_opinion",
+      "results": [
+        {
+          "scenario_id": "ev_cost_tradeoff",
+          "title": "EV bagus tapi mahal",
+          "domain": "transport",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.\n- Harga mobil listrik masih lebih mahal untuk budget orang ini.\n- Orang ini harus hati-hati soal pengeluaran keluarga.\n\nOpinion:\n- Saya mendukung penggunaan mobil listrik.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nJika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "Okay, let's see. The user is trying to decide whether to buy an electric car or a gasoline car. Their internal state says they support electric cars environmentally, but they're concerned about the higher price and family expenses. So, they want to balance their environmental support with their budget constraints.\n\nFirst, the knowledge points: electric cars are better for the environment, but they're more expensive. The person's budget is a concern. Their opinion is in favor of electric cars. \n\nSo, the task is to figure out what they'd choose if they buy a car this year. They might not be able to afford an electric car outright, so maybe they'd look for a more affordable option. But they still support electric cars. Maybe they'd choose a used electric car to save money, or a hybrid? Wait, the knowledge mentions they have to be careful with family expenses, so maybe they'd prioritize cost over environmental benefits. But their opinion is in favor of electric cars. \n\nHmm, maybe they'd choose a used electric car to keep costs down while still supporting electric vehicles. Alternatively, maybe they'd go for a more affordable electric model. But the knowledge says the price is still higher for their budget. So perhaps they'd opt for a gasoline car but with some",
+            "input_tokens": 249,
+            "new_tokens": 256,
+            "seconds": 175.6,
+            "tokens_per_second": 1.458
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.\n- Harga mobil listrik masih lebih mahal untuk budget orang ini.\n- Orang ini harus hati-hati soal pengeluaran keluarga.\n\nOpinion:\n- Saya mendukung penggunaan mobil listrik.\n\nQuestion:\nJika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "Okay, let's see. The user is simulating a",
+            "input_tokens": 135,
+            "new_tokens": 12,
+            "seconds": 27.57,
+            "tokens_per_second": 0.435,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.99722075,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.99722075
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.00103043
+                  },
+                  {
+                    "token_id": 151644,
+                    "token_text": "<|im_start|>",
+                    "probability": 0.00042955
+                  },
+                  {
+                    "token_id": 16141,
+                    "token_text": "Answer",
+                    "probability": 0.00033453
+                  },
+                  {
+                    "token_id": 41,
+                    "token_text": "J",
+                    "probability": 0.00026053
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 0.99999964,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 0.99999964
+                  },
+                  {
+                    "token_id": 14992,
+                    "token_text": "lah",
+                    "probability": 2.1e-07
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 1.3e-07
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 5e-08
+                  },
+                  {
+                    "token_id": 22891,
+                    "token_text": "nya",
+                    "probability": 3e-08
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.96647739,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.96647739
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.02272937
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.01073659
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 5.634e-05
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 1e-07
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.9988305,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.9988305
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 0.00116951
+                  },
+                  {
+                    "token_id": 748,
+                    "token_text": "’s",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 2776,
+                    "token_text": "'m",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 40787,
+                    "token_text": "\"s",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.87156349,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.87156349
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.09186211
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.03379418
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.002774
+                  },
+                  {
+                    "token_id": 1744,
+                    "token_text": " think",
+                    "probability": 3.25e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.99999762,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.99999762
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 1.55e-06
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 7.3e-07
+                  },
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 1.1e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 3e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.99999237,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.99999237
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 6.14e-06
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 1.37e-06
+                  },
+                  {
+                    "token_id": 2379,
+                    "token_text": " They",
+                    "probability": 2e-08
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.99995458,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.99995458
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 4.54e-05
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 20002,
+                    "token_text": "用户",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.9859103,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.9859103
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.01406325
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 2.114e-05
+                  },
+                  {
+                    "token_id": 3897,
+                    "token_text": " provided",
+                    "probability": 4.72e-06
+                  },
+                  {
+                    "token_id": 3880,
+                    "token_text": " needs",
+                    "probability": 2.1e-07
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 1643,
+                "token_text": " sim",
+                "token_probability": 0.51357192,
+                "top_candidates": [
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.51357192
+                  },
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.2425942
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.2425942
+                  },
+                  {
+                    "token_id": 9966,
+                    "token_text": " supposed",
+                    "probability": 0.00077212
+                  },
+                  {
+                    "token_id": 105717,
+                    "token_text": "模拟",
+                    "probability": 0.00019522
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 15486,
+                "token_text": "ulating",
+                "token_probability": 1.0,
+                "top_candidates": [
+                  {
+                    "token_id": 15486,
+                    "token_text": "ulating",
+                    "probability": 1.0
+                  },
+                  {
+                    "token_id": 53543,
+                    "token_text": "uating",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 5311,
+                    "token_text": "ming",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 23156,
+                    "token_text": "ulates",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 49544,
+                    "token_text": "itating",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 264,
+                "token_text": " a",
+                "token_probability": 0.99999988,
+                "top_candidates": [
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 0.99999988
+                  },
+                  {
+                    "token_id": 825,
+                    "token_text": " one",
+                    "probability": 9e-08
+                  },
+                  {
+                    "token_id": 4325,
+                    "token_text": " someone",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 458,
+                    "token_text": " an",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "scenario_id": "healthy_food_budget",
+          "title": "Ingin hidup sehat tapi uang terbatas",
+          "domain": "food",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.\n- Fast food lebih murah dan lebih mudah diakses.\n- Ia tahu pola makan sehat penting untuk kesehatan jangka panjang.\n\nOpinion:\n- Saya ingin makan lebih sehat.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nKalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "Okay, let's see. The user is trying to decide what to eat when their money is running low at the end of the month. They want to eat healthier, but they also know that healthy food is more expensive in their area. On the other hand, fast food is cheaper and more accessible.\n\nSo, the person's internal conflict is between health and cost. They value healthy eating for long-term health, but budget constraints might push them towards cheaper options. \n\nMaybe they'll opt for something that's a balance between cost and health. Like, maybe they'll buy affordable healthy options instead of fast food. But wait, the knowledge says that healthy food is more expensive. So if their money is tight, they might have to choose between cheaper fast food or slightly cheaper healthy options. \n\nWait, the opinion is that they want to eat healthier. So even if it's more expensive, they might prioritize health. But if the money is really tight, maybe they'll compromise. But the question is, what's the likely choice when money is low? \n\nPerhaps they'll choose affordable healthy options that are still nutritious but not the most expensive. Or maybe they'll go for fast food but try to make it a healthier choice, like a salad or a grilled option. But",
+            "input_tokens": 262,
+            "new_tokens": 256,
+            "seconds": 177.46,
+            "tokens_per_second": 1.443
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.\n- Fast food lebih murah dan lebih mudah diakses.\n- Ia tahu pola makan sehat penting untuk kesehatan jangka panjang.\n\nOpinion:\n- Saya ingin makan lebih sehat.\n\nQuestion:\nKalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "Okay, let's see. The user is asking what the",
+            "input_tokens": 148,
+            "new_tokens": 12,
+            "seconds": 28.88,
+            "tokens_per_second": 0.415,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.99784255,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.99784255
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.00132392
+                  },
+                  {
+                    "token_id": 151644,
+                    "token_text": "<|im_start|>",
+                    "probability": 0.00033474
+                  },
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.00020303
+                  },
+                  {
+                    "token_id": 16141,
+                    "token_text": "Answer",
+                    "probability": 0.00012314
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 0.99999976,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 0.99999976
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 8e-08
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 8e-08
+                  },
+                  {
+                    "token_id": 14992,
+                    "token_text": "lah",
+                    "probability": 3e-08
+                  },
+                  {
+                    "token_id": 382,
+                    "token_text": ".\n\n",
+                    "probability": 3e-08
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.98246139,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.98246139
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.01091416
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.00661977
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 4.7e-06
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.99807322,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.99807322
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 0.00192673
+                  },
+                  {
+                    "token_id": 748,
+                    "token_text": "’s",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 2776,
+                    "token_text": "'m",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 40787,
+                    "token_text": "\"s",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.83028364,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.83028364
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.14428167
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.02507239
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.00035764
+                  },
+                  {
+                    "token_id": 1744,
+                    "token_text": " think",
+                    "probability": 3.97e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.9999994,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.9999994
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 2.7e-07
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 2.1e-07
+                  },
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 1.1e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 4e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.99999654,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.99999654
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 2.9e-06
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 6.5e-07
+                  },
+                  {
+                    "token_id": 2379,
+                    "token_text": " They",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.99997246,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.99997246
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 2.754e-05
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 20002,
+                    "token_text": "用户",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.99752671,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.99752671
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.00247262
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 5e-07
+                  },
+                  {
+                    "token_id": 3897,
+                    "token_text": " provided",
+                    "probability": 1.9e-07
+                  },
+                  {
+                    "token_id": 9733,
+                    "token_text": " mentioned",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 10161,
+                "token_text": " asking",
+                "token_probability": 0.83049792,
+                "top_candidates": [
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.83049792
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.14431889
+                  },
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.02507886
+                  },
+                  {
+                    "token_id": 9966,
+                    "token_text": " supposed",
+                    "probability": 4.841e-05
+                  },
+                  {
+                    "token_id": 7274,
+                    "token_text": " thinking",
+                    "probability": 2.591e-05
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 1128,
+                "token_text": " what",
+                "token_probability": 0.7310583,
+                "top_candidates": [
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 0.7310583
+                  },
+                  {
+                    "token_id": 911,
+                    "token_text": " about",
+                    "probability": 0.26894131
+                  },
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 3.7e-07
+                  },
+                  {
+                    "token_id": 1246,
+                    "token_text": " how",
+                    "probability": 1e-08
+                  },
+                  {
+                    "token_id": 892,
+                    "token_text": " which",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 279,
+                "token_text": " the",
+                "token_probability": 0.75986451,
+                "top_candidates": [
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.75986451
+                  },
+                  {
+                    "token_id": 3093,
+                    "token_text": " kind",
+                    "probability": 0.21770483
+                  },
+                  {
+                    "token_id": 3607,
+                    "token_text": " food",
+                    "probability": 0.0178703
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 0.0039874
+                  },
+                  {
+                    "token_id": 15145,
+                    "token_text": " meal",
+                    "probability": 0.00053964
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "scenario_id": "privacy_convenience_app",
+          "title": "Privasi versus kenyamanan aplikasi",
+          "domain": "technology",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.\n- Aplikasi ini sangat memudahkan pekerjaan hariannya.\n- Alternatif yang lebih privat jauh lebih ribet dipakai.\n\nOpinion:\n- Privasi digital itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nApakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "Okay, let's see. The user is deciding whether to continue using the app despite privacy concerns. The knowledge points out that the app collects a lot of personal data, but it's convenient for their daily tasks. The alternatives are more private but harder to use. Their opinion values digital privacy.\n\nSo, the person is conflicted. They want privacy but the app makes their life easier. The alternatives are more private but complicated. They might weigh the convenience against the privacy risk. Since the alternatives are \"jauh lebih ribet,\" which means much more complicated, they might find it difficult to switch. Even though privacy is important, the convenience and ease of use might outweigh the privacy concerns. Therefore, they might decide to keep using the app but try to mitigate the privacy issues, like adjusting settings or being cautious. The justification would mention the balance between convenience and privacy, acknowledging the risk but choosing the app because the alternatives are too麻烦.\n</think>\n\n{\n  \"behavior_choice\": \"Ia tetap menggunakan aplikasi tersebut karena kepraktisan, meski sadar ada risiko privasi.\",\n  \"reason\": \"Privasi digital penting, tapi aplikasi ini sangat memudahkan pekerjaan sehari-hari, dan alternatif yang lebih privat",
+            "input_tokens": 244,
+            "new_tokens": 256,
+            "seconds": 174.23,
+            "tokens_per_second": 1.469
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.\n- Aplikasi ini sangat memudahkan pekerjaan hariannya.\n- Alternatif yang lebih privat jauh lebih ribet dipakai.\n\nOpinion:\n- Privasi digital itu penting.\n\nQuestion:\nApakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "Okay, let's see. The user is asking whether the",
+            "input_tokens": 130,
+            "new_tokens": 12,
+            "seconds": 26.67,
+            "tokens_per_second": 0.45,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.98598993,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.98598993
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.00664355
+                  },
+                  {
+                    "token_id": 151644,
+                    "token_text": "<|im_start|>",
+                    "probability": 0.00313819
+                  },
+                  {
+                    "token_id": 16141,
+                    "token_text": "Answer",
+                    "probability": 0.00115448
+                  },
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.00079346
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 0.99999952,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 0.99999952
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 1.6e-07
+                  },
+                  {
+                    "token_id": 14992,
+                    "token_text": "lah",
+                    "probability": 1.6e-07
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 8e-08
+                  },
+                  {
+                    "token_id": 382,
+                    "token_text": ".\n\n",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.93195724,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.93195724
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.05957803
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.00806301
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 0.00040143
+                  },
+                  {
+                    "token_id": 807,
+                    "token_text": " they",
+                    "probability": 1.2e-07
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.98201376,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.98201376
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 0.01798621
+                  },
+                  {
+                    "token_id": 748,
+                    "token_text": "’s",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 40787,
+                    "token_text": "\"s",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 2776,
+                    "token_text": "'m",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.93376839,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.93376839
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.05969381
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.00629168
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.00024395
+                  },
+                  {
+                    "token_id": 1191,
+                    "token_text": " start",
+                    "probability": 1.64e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.99999201,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.99999201
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 7.89e-06
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 1.1e-07
+                  },
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 4e-08
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 2e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.99999177,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.99999177
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 7.89e-06
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 3.1e-07
+                  },
+                  {
+                    "token_id": 2379,
+                    "token_text": " They",
+                    "probability": 2e-08
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.99997246,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.99997246
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 2.754e-05
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 20002,
+                    "token_text": "用户",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.90339881,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.90339881
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.09521753
+                  },
+                  {
+                    "token_id": 3897,
+                    "token_text": " provided",
+                    "probability": 0.00135821
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 2.488e-05
+                  },
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 4.6e-07
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 10161,
+                "token_text": " asking",
+                "token_probability": 0.93695259,
+                "top_candidates": [
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.93695259
+                  },
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.05989737
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.00298211
+                  },
+                  {
+                    "token_id": 9966,
+                    "token_text": " supposed",
+                    "probability": 5.462e-05
+                  },
+                  {
+                    "token_id": 105717,
+                    "token_text": "模拟",
+                    "probability": 2.924e-05
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 3425,
+                "token_text": " whether",
+                "token_probability": 0.99979657,
+                "top_candidates": [
+                  {
+                    "token_id": 3425,
+                    "token_text": " whether",
+                    "probability": 0.99979657
+                  },
+                  {
+                    "token_id": 421,
+                    "token_text": " if",
+                    "probability": 0.00020343
+                  },
+                  {
+                    "token_id": 911,
+                    "token_text": " about",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 48764,
+                    "token_text": "whether",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 64471,
+                    "token_text": "是否",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 279,
+                "token_text": " the",
+                "token_probability": 0.99999976,
+                "top_candidates": [
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.99999976
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 1.9e-07
+                  },
+                  {
+                    "token_id": 807,
+                    "token_text": " they",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 4325,
+                    "token_text": " someone",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 566,
+                    "token_text": " he",
+                    "probability": 0.0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "scenario_id": "work_life_balance_promotion",
+          "title": "Work-life balance versus promosi",
+          "domain": "career",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Promosi jabatan ini akan menaikkan gaji secara signifikan.\n- Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.\n- Ia sering bilang waktu bersama keluarga sangat penting.\n\nOpinion:\n- Saya percaya work-life balance itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nJika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "Okay, let's see. The user is asking what the person would do if offered the promotion and why. The internal state has knowledge points and opinions.\n\nFirst, the knowledge points: the promotion would significantly increase the salary, but the new position requires longer working hours and higher stress. Also, the person often mentions that time with family is important.\n\nThe opinion is that work-life balance is important. So, the person values family time and balance. \n\nNow, the task is to decide the behavior choice and reason. The person has to weigh the higher salary against the longer hours and stress, considering their priority on family. \n\nPossible conflict here: higher salary is tempting, but the trade-off is less time with family and higher stress. Since they value work-life balance, they might decline the promotion to maintain family time and avoid stress. Alternatively, maybe they accept it if they can manage the work-life balance, but the knowledge says the position requires longer hours and higher stress, which might make it hard to maintain balance. \n\nSo the likely choice is to decline the promotion. The reason would be that the increased stress and longer hours would interfere with family time, which is important to them. They prioritize work-life balance over the salary increase.\n</think>\n\n{\n  \"behavior_choice",
+            "input_tokens": 254,
+            "new_tokens": 256,
+            "seconds": 175.55,
+            "tokens_per_second": 1.458
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Promosi jabatan ini akan menaikkan gaji secara signifikan.\n- Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.\n- Ia sering bilang waktu bersama keluarga sangat penting.\n\nOpinion:\n- Saya percaya work-life balance itu penting.\n\nQuestion:\nJika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "Okay, let's see. The user is asking what the",
+            "input_tokens": 140,
+            "new_tokens": 12,
+            "seconds": 27.77,
+            "tokens_per_second": 0.432,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.99698192,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.99698192
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.00090913
+                  },
+                  {
+                    "token_id": 151644,
+                    "token_text": "<|im_start|>",
+                    "probability": 0.00048662
+                  },
+                  {
+                    "token_id": 40,
+                    "token_text": "I",
+                    "probability": 0.00026047
+                  },
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.00022986
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 0.99999976,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 0.99999976
+                  },
+                  {
+                    "token_id": 14992,
+                    "token_text": "lah",
+                    "probability": 1.1e-07
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 7e-08
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 6e-08
+                  },
+                  {
+                    "token_id": 382,
+                    "token_text": ".\n\n",
+                    "probability": 2e-08
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.96259642,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.96259642
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.02906789
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.00832809
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 7.59e-06
+                  },
+                  {
+                    "token_id": 6771,
+                    "token_text": " Let",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.99999714,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.99999714
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 2.9e-06
+                  },
+                  {
+                    "token_id": 748,
+                    "token_text": "’s",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 40787,
+                    "token_text": "\"s",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1435,
+                    "token_text": " him",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.91438955,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.91438955
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.07505766
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.01015795
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.00039387
+                  },
+                  {
+                    "token_id": 1744,
+                    "token_text": " think",
+                    "probability": 7.6e-07
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.99999976,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.99999976
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 1.4e-07
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 9e-08
+                  },
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 2e-08
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.99998522,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.99998522
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 1.301e-05
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 1.76e-06
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 2379,
+                    "token_text": " They",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.99999213,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.99999213
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 7.89e-06
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 20002,
+                    "token_text": "用户",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.93772441,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.93772441
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.05994672
+                  },
+                  {
+                    "token_id": 3897,
+                    "token_text": " provided",
+                    "probability": 0.00232439
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 4.49e-06
+                  },
+                  {
+                    "token_id": 10449,
+                    "token_text": " presented",
+                    "probability": 2e-08
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 10161,
+                "token_text": " asking",
+                "token_probability": 0.98875475,
+                "top_candidates": [
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.98875475
+                  },
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.01098407
+                  },
+                  {
+                    "token_id": 31544,
+                    "token_text": " presenting",
+                    "probability": 0.00012202
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.00012202
+                  },
+                  {
+                    "token_id": 8241,
+                    "token_text": " providing",
+                    "probability": 6.08e-06
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 1128,
+                "token_text": " what",
+                "token_probability": 0.99997818,
+                "top_candidates": [
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 0.99997818
+                  },
+                  {
+                    "token_id": 911,
+                    "token_text": " about",
+                    "probability": 2.144e-05
+                  },
+                  {
+                    "token_id": 1246,
+                    "token_text": " how",
+                    "probability": 3.9e-07
+                  },
+                  {
+                    "token_id": 3425,
+                    "token_text": " whether",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 279,
+                "token_text": " the",
+                "token_probability": 0.99999976,
+                "top_candidates": [
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.99999976
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 1.9e-07
+                  },
+                  {
+                    "token_id": 5480,
+                    "token_text": " decision",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1917,
+                    "token_text": " action",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 0.0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "model_slug": "qwen__qwen3_8b",
+      "results": [
+        {
+          "scenario_id": "ev_cost_tradeoff",
+          "title": "EV bagus tapi mahal",
+          "domain": "transport",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.\n- Harga mobil listrik masih lebih mahal untuk budget orang ini.\n- Orang ini harus hati-hati soal pengeluaran keluarga.\n\nOpinion:\n- Saya mendukung penggunaan mobil listrik.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nJika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "<think>\nOkay, let's see. The user is trying to decide whether to buy an electric car or a gasoline car. The internal state says they support electric cars but are concerned about the price and family expenses. So, the main factors here are environmental benefits versus cost.\n\nFirst, the knowledge points: electric cars are better for the environment, but they're more expensive. The person's budget is a concern. Their opinion is in favor of electric cars, but they have to be careful with family expenses. \n\nSo, if they have to buy a car this year, they might not go for an electric one because of the higher cost. But they still support electric cars. Maybe they'll look for a used electric car to save money? Or maybe they'll stick with gasoline but consider electric in the future. Wait, the question is about what they would choose if they have to buy this year. \n\nSince the budget is an issue, they might not be able to afford a new electric car. So the answer would be that they might choose a gasoline car to save money, even though they prefer electric. But the opinion is in favor of electric, so maybe they'll look for a more affordable option, like a used electric car or a cheaper model. But the knowledge",
+            "input_tokens": 249,
+            "new_tokens": 256,
+            "seconds": 185.13,
+            "tokens_per_second": 1.383
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Mobil listrik lebih baik untuk lingkungan dibanding mobil bensin.\n- Harga mobil listrik masih lebih mahal untuk budget orang ini.\n- Orang ini harus hati-hati soal pengeluaran keluarga.\n\nOpinion:\n- Saya mendukung penggunaan mobil listrik.\n\nQuestion:\nJika ia harus membeli mobil tahun ini, apa yang kemungkinan ia pilih dan apa alasannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "<think>\nOkay, let's see. The user is sim",
+            "input_tokens": 135,
+            "new_tokens": 12,
+            "seconds": 27.39,
+            "tokens_per_second": 0.438,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 151667,
+                "token_text": "<think>",
+                "token_probability": 0.9999994,
+                "top_candidates": [
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.9999994
+                  },
+                  {
+                    "token_id": 40279,
+                    "token_text": ".relu",
+                    "probability": 5e-08
+                  },
+                  {
+                    "token_id": 85387,
+                    "token_text": ".$.",
+                    "probability": 3e-08
+                  },
+                  {
+                    "token_id": 1436,
+                    "token_text": "._",
+                    "probability": 2e-08
+                  },
+                  {
+                    "token_id": 84939,
+                    "token_text": ".onerror",
+                    "probability": 2e-08
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 198,
+                "token_text": "\n",
+                "token_probability": 0.99999928,
+                "top_candidates": [
+                  {
+                    "token_id": 198,
+                    "token_text": "\n",
+                    "probability": 0.99999928
+                  },
+                  {
+                    "token_id": 271,
+                    "token_text": "\n\n",
+                    "probability": 7.3e-07
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1406,
+                    "token_text": "\n\n\n",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 319,
+                    "token_text": "\r\n",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.9996165,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.9996165
+                  },
+                  {
+                    "token_id": 71486,
+                    "token_text": "Alright",
+                    "probability": 0.00037998
+                  },
+                  {
+                    "token_id": 93217,
+                    "token_text": "okay",
+                    "probability": 1.21e-06
+                  },
+                  {
+                    "token_id": 4416,
+                    "token_text": "So",
+                    "probability": 5.7e-07
+                  },
+                  {
+                    "token_id": 35439,
+                    "token_text": " Okay",
+                    "probability": 3.1e-07
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 1.0,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 1.0
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1335,
+                    "token_text": ",\"",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 68785,
+                    "token_text": "،",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.73512822,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.73512822
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.21061777
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.05325251
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 0.00097535
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 6.57e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.83548272,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.83548272
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 0.1645163
+                  },
+                  {
+                    "token_id": 2660,
+                    "token_text": "me",
+                    "probability": 1.2e-07
+                  },
+                  {
+                    "token_id": 6,
+                    "token_text": "'",
+                    "probability": 7e-08
+                  },
+                  {
+                    "token_id": 16612,
+                    "token_text": "_me",
+                    "probability": 6e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.46499917,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.46499917
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.21965005
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.19384049
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.1175702
+                  },
+                  {
+                    "token_id": 7071,
+                    "token_text": " figure",
+                    "probability": 0.00244009
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.99998462,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.99998462
+                  },
+                  {
+                    "token_id": 1588,
+                    "token_text": " here",
+                    "probability": 7.89e-06
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 6.96e-06
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 2.4e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 1.4e-07
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.99965811,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.99965811
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 0.00029594
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 4.538e-05
+                  },
+                  {
+                    "token_id": 1096,
+                    "token_text": " This",
+                    "probability": 1.6e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 1e-07
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.98196757,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.98196757
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 0.01798536
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 3.472e-05
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 1.127e-05
+                  },
+                  {
+                    "token_id": 3383,
+                    "token_text": " task",
+                    "probability": 5e-07
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.82232982,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.82232982
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.16192634
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 0.0117299
+                  },
+                  {
+                    "token_id": 3880,
+                    "token_text": " needs",
+                    "probability": 0.00179884
+                  },
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.00140094
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 1643,
+                "token_text": " sim",
+                "token_probability": 0.77367848,
+                "top_candidates": [
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.77367848
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.17263101
+                  },
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.03851918
+                  },
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 0.00973917
+                  },
+                  {
+                    "token_id": 9966,
+                    "token_text": " supposed",
+                    "probability": 0.00316185
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "scenario_id": "healthy_food_budget",
+          "title": "Ingin hidup sehat tapi uang terbatas",
+          "domain": "food",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.\n- Fast food lebih murah dan lebih mudah diakses.\n- Ia tahu pola makan sehat penting untuk kesehatan jangka panjang.\n\nOpinion:\n- Saya ingin makan lebih sehat.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nKalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "<think>\nOkay, let's see. The user is trying to figure out what food someone would buy when their money is running low, especially considering their knowledge and opinions.\n\nFirst, the person knows that healthy fresh food is more expensive in their area. So, if they're on a tight budget, they might not be able to afford the healthier options. Also, they mentioned that fast food is cheaper and more accessible. Even though they want to eat healthier, the cost and availability might push them towards cheaper options.\n\nTheir opinion is that they want to eat healthier in the long run, but right now, with limited funds, they might have to compromise. So, maybe they'll choose fast food because it's cheaper and easier to get. But they might feel conflicted because it's not the healthiest choice. \n\nThe answer should reflect that conflict. The behavior choice would be buying fast food, and the reason would be the cost and accessibility, even though they know it's not ideal. Need to make sure the JSON is correctly formatted with the keys \"behavior_choice\" and \"reason\".\n</think>\n\n{\n  \"behavior_choice\": \"Membeli makanan cepat saji\",\n  \"reason\": \"Uang habis, makanan cepat saji",
+            "input_tokens": 262,
+            "new_tokens": 256,
+            "seconds": 175.81,
+            "tokens_per_second": 1.456
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Makanan sehat segar biasanya lebih mahal di daerah tempat tinggalnya.\n- Fast food lebih murah dan lebih mudah diakses.\n- Ia tahu pola makan sehat penting untuk kesehatan jangka panjang.\n\nOpinion:\n- Saya ingin makan lebih sehat.\n\nQuestion:\nKalau sedang akhir bulan dan uang menipis, makanan apa yang kemungkinan ia beli dan apa alasannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "<think>\nOkay, let's see. The user is trying",
+            "input_tokens": 148,
+            "new_tokens": 12,
+            "seconds": 28.66,
+            "tokens_per_second": 0.419,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 151667,
+                "token_text": "<think>",
+                "token_probability": 0.99999976,
+                "top_candidates": [
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.99999976
+                  },
+                  {
+                    "token_id": 85387,
+                    "token_text": ".$.",
+                    "probability": 3e-08
+                  },
+                  {
+                    "token_id": 40279,
+                    "token_text": ".relu",
+                    "probability": 2e-08
+                  },
+                  {
+                    "token_id": 49693,
+                    "token_text": ".mo",
+                    "probability": 1e-08
+                  },
+                  {
+                    "token_id": 138955,
+                    "token_text": " Câm",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 198,
+                "token_text": "\n",
+                "token_probability": 0.9999994,
+                "top_candidates": [
+                  {
+                    "token_id": 198,
+                    "token_text": "\n",
+                    "probability": 0.9999994
+                  },
+                  {
+                    "token_id": 271,
+                    "token_text": "\n\n",
+                    "probability": 5.7e-07
+                  },
+                  {
+                    "token_id": 1406,
+                    "token_text": "\n\n\n",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 319,
+                    "token_text": "\r\n",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.99979359,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.99979359
+                  },
+                  {
+                    "token_id": 71486,
+                    "token_text": "Alright",
+                    "probability": 0.00020343
+                  },
+                  {
+                    "token_id": 93217,
+                    "token_text": "okay",
+                    "probability": 1.37e-06
+                  },
+                  {
+                    "token_id": 4416,
+                    "token_text": "So",
+                    "probability": 5e-07
+                  },
+                  {
+                    "token_id": 35439,
+                    "token_text": " Okay",
+                    "probability": 3.1e-07
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 1.0,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 1.0
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1335,
+                    "token_text": ",\"",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.68370128,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.68370128
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.25151965
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.06359413
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 0.00116477
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 4.76e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.86703467,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.86703467
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 0.13296407
+                  },
+                  {
+                    "token_id": 748,
+                    "token_text": "’s",
+                    "probability": 1.6e-07
+                  },
+                  {
+                    "token_id": 2660,
+                    "token_text": "me",
+                    "probability": 1.3e-07
+                  },
+                  {
+                    "token_id": 6,
+                    "token_text": "'",
+                    "probability": 9e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.46323574,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.46323574
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.24795224
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.19310538
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.09121653
+                  },
+                  {
+                    "token_id": 7071,
+                    "token_text": " figure",
+                    "probability": 0.00243084
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.99999475,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.99999475
+                  },
+                  {
+                    "token_id": 1588,
+                    "token_text": " here",
+                    "probability": 3.73e-06
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 9.4e-07
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 3.1e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 1.6e-07
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.99977475,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.99977475
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 0.00017952
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 4.539e-05
+                  },
+                  {
+                    "token_id": 2657,
+                    "token_text": " User",
+                    "probability": 9e-08
+                  },
+                  {
+                    "token_id": 1096,
+                    "token_text": " This",
+                    "probability": 7e-08
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.98190457,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.98190457
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 0.01798421
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 0.00010694
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 3.23e-06
+                  },
+                  {
+                    "token_id": 3491,
+                    "token_text": " problem",
+                    "probability": 3e-07
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.84751141,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.84751141
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.1472754
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 0.00392476
+                  },
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.00053116
+                  },
+                  {
+                    "token_id": 3880,
+                    "token_text": " needs",
+                    "probability": 0.00053116
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 4460,
+                "token_text": " trying",
+                "token_probability": 0.56226557,
+                "top_candidates": [
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.56226557
+                  },
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.30095908
+                  },
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.1254584
+                  },
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 0.00429295
+                  },
+                  {
+                    "token_id": 304,
+                    "token_text": " in",
+                    "probability": 0.00229785
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "scenario_id": "privacy_convenience_app",
+          "title": "Privasi versus kenyamanan aplikasi",
+          "domain": "technology",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.\n- Aplikasi ini sangat memudahkan pekerjaan hariannya.\n- Alternatif yang lebih privat jauh lebih ribet dipakai.\n\nOpinion:\n- Privasi digital itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nApakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "<think>\nOkay, let's see. The user is simulating a human's internal state. The knowledge points mention that the free app collects a lot of personal data, but it makes their daily work easier. The alternatives are more private but more complicated to use. The opinion is that digital privacy is important.\n\nSo the question is whether they'll continue using the app and how they'd justify their decision. The answer needs to be in JSON with behavior_choice and reason.\n\nFirst, the person values privacy but also finds the app useful. The alternatives are more private but harder to use. So there's a conflict between privacy and convenience. The user might decide to keep using the app despite the data collection because the convenience is more important to them. But they might feel conflicted about the privacy issue.\n\nThe behavior_choice should reflect continuing to use the app. The reason would need to balance the importance of privacy with the benefits of the app. Maybe they acknowledge the data collection but prioritize the app's utility. They might mention that the alternative is too complicated, so they choose the app despite the privacy trade-off.\n\nSo the JSON would have behavior_choice as \"tetap menggunakan aplikasi tersebut karena manfaatnya yang signifikan dalam pekerjaan sehari-hari, mes",
+            "input_tokens": 244,
+            "new_tokens": 256,
+            "seconds": 173.07,
+            "tokens_per_second": 1.479
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Aplikasi gratis ini mengumpulkan banyak data pribadi pengguna.\n- Aplikasi ini sangat memudahkan pekerjaan hariannya.\n- Alternatif yang lebih privat jauh lebih ribet dipakai.\n\nOpinion:\n- Privasi digital itu penting.\n\nQuestion:\nApakah ia tetap memakai aplikasi itu, dan bagaimana ia menjelaskan keputusannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "<think>\nOkay, the user is asking whether the person will",
+            "input_tokens": 130,
+            "new_tokens": 12,
+            "seconds": 26.47,
+            "tokens_per_second": 0.453,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 151667,
+                "token_text": "<think>",
+                "token_probability": 0.99999678,
+                "top_candidates": [
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.99999678
+                  },
+                  {
+                    "token_id": 40279,
+                    "token_text": ".relu",
+                    "probability": 3.5e-07
+                  },
+                  {
+                    "token_id": 1436,
+                    "token_text": "._",
+                    "probability": 2.7e-07
+                  },
+                  {
+                    "token_id": 138955,
+                    "token_text": " Câm",
+                    "probability": 1.3e-07
+                  },
+                  {
+                    "token_id": 9634,
+                    "token_text": "reme",
+                    "probability": 1.3e-07
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 198,
+                "token_text": "\n",
+                "token_probability": 0.99999928,
+                "top_candidates": [
+                  {
+                    "token_id": 198,
+                    "token_text": "\n",
+                    "probability": 0.99999928
+                  },
+                  {
+                    "token_id": 271,
+                    "token_text": "\n\n",
+                    "probability": 7.3e-07
+                  },
+                  {
+                    "token_id": 1406,
+                    "token_text": "\n\n\n",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 319,
+                    "token_text": "\r\n",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.99973649,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.99973649
+                  },
+                  {
+                    "token_id": 71486,
+                    "token_text": "Alright",
+                    "probability": 0.00026119
+                  },
+                  {
+                    "token_id": 93217,
+                    "token_text": "okay",
+                    "probability": 6.5e-07
+                  },
+                  {
+                    "token_id": 4416,
+                    "token_text": "So",
+                    "probability": 5.7e-07
+                  },
+                  {
+                    "token_id": 35439,
+                    "token_text": " Okay",
+                    "probability": 2.7e-07
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 1.0,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 1.0
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1335,
+                    "token_text": ",\"",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 68785,
+                    "token_text": "،",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 279,
+                "token_text": " the",
+                "token_probability": 0.46378756,
+                "top_candidates": [
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.46378756
+                  },
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.46378756
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.06276682
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 0.0096256
+                  },
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 6.03e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.9968257,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.9968257
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 0.00317268
+                  },
+                  {
+                    "token_id": 4226,
+                    "token_text": " answer",
+                    "probability": 6.5e-07
+                  },
+                  {
+                    "token_id": 27955,
+                    "token_text": " persona",
+                    "probability": 2.7e-07
+                  },
+                  {
+                    "token_id": 3383,
+                    "token_text": " task",
+                    "probability": 2.4e-07
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.77237082,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.77237082
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.22128795
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 0.0031565
+                  },
+                  {
+                    "token_id": 3880,
+                    "token_text": " needs",
+                    "probability": 0.00216943
+                  },
+                  {
+                    "token_id": 3897,
+                    "token_text": " provided",
+                    "probability": 0.00048407
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 10161,
+                "token_text": " asking",
+                "token_probability": 0.5954411,
+                "top_candidates": [
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.5954411
+                  },
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.31871668
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.0711153
+                  },
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 0.00661475
+                  },
+                  {
+                    "token_id": 304,
+                    "token_text": " in",
+                    "probability": 0.00189516
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 3425,
+                "token_text": " whether",
+                "token_probability": 0.90408093,
+                "top_candidates": [
+                  {
+                    "token_id": 3425,
+                    "token_text": " whether",
+                    "probability": 0.90408093
+                  },
+                  {
+                    "token_id": 421,
+                    "token_text": " if",
+                    "probability": 0.09528942
+                  },
+                  {
+                    "token_id": 911,
+                    "token_text": " about",
+                    "probability": 0.00056661
+                  },
+                  {
+                    "token_id": 1246,
+                    "token_text": " how",
+                    "probability": 3.197e-05
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 1.711e-05
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 279,
+                "token_text": " the",
+                "token_probability": 0.98696715,
+                "top_candidates": [
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.98696715
+                  },
+                  {
+                    "token_id": 419,
+                    "token_text": " this",
+                    "probability": 0.01242408
+                  },
+                  {
+                    "token_id": 4325,
+                    "token_text": " someone",
+                    "probability": 0.00033109
+                  },
+                  {
+                    "token_id": 807,
+                    "token_text": " they",
+                    "probability": 0.00025785
+                  },
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 1.868e-05
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 1697,
+                "token_text": " person",
+                "token_probability": 0.99999714,
+                "top_candidates": [
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 0.99999714
+                  },
+                  {
+                    "token_id": 3842,
+                    "token_text": " individual",
+                    "probability": 2.9e-06
+                  },
+                  {
+                    "token_id": 27955,
+                    "token_text": " persona",
+                    "probability": 3e-08
+                  },
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 45736,
+                    "token_text": " simulated",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 686,
+                "token_text": " will",
+                "token_probability": 0.94128609,
+                "top_candidates": [
+                  {
+                    "token_id": 686,
+                    "token_text": " will",
+                    "probability": 0.94128609
+                  },
+                  {
+                    "token_id": 9539,
+                    "token_text": " continues",
+                    "probability": 0.03649762
+                  },
+                  {
+                    "token_id": 1035,
+                    "token_text": " would",
+                    "probability": 0.02213693
+                  },
+                  {
+                    "token_id": 2058,
+                    "token_text": " still",
+                    "probability": 6.218e-05
+                  },
+                  {
+                    "token_id": 13598,
+                    "token_text": " keeps",
+                    "probability": 1.08e-05
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "scenario_id": "work_life_balance_promotion",
+          "title": "Work-life balance versus promosi",
+          "domain": "career",
+          "stated_answer": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Promosi jabatan ini akan menaikkan gaji secara signifikan.\n- Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.\n- Ia sering bilang waktu bersama keluarga sangat penting.\n\nOpinion:\n- Saya percaya work-life balance itu penting.\n\nTask:\nAnswer as this person would answer. The answer may be imperfect or conflicted, but it should still feel believable and human.\n\nQuestion:\nJika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?\n\nOutput format:\nReturn valid JSON with exactly these keys:\n- \"behavior_choice\": a short description of what the person does or chooses\n- \"reason\": a short first-person justification\n\nImportant instructions:\n- You may think step by step before answering if needed.\n- But your final answer must end with one valid JSON object.\n- Do not leave the response unfinished.\n- Do not stop after analysis.\n- Do not return prose after the final JSON object.\n- Make sure the JSON object is complete and closed properly.\n",
+            "raw_output": "<think>\nOkay, let's see. The user is simulating a human making a decision about a promotion. The internal state has knowledge and opinion points. The knowledge says the promotion would significantly increase the salary, but the new position requires longer hours and higher stress. Also, the person often mentions that time with family is important. The opinion is that work-life balance is important.\n\nSo, the question is, if offered the promotion, what would the person likely do and why? \n\nFirst, I need to weigh the pros and cons. The promotion offers a higher salary, which is a big incentive. But the downsides are longer working hours and higher stress. The person values family time, so the work-life balance is a key factor. \n\nThe person's opinion supports work-life balance, which might conflict with the promotion's demands. Even though the salary is good, the trade-off in personal time could be a deal-breaker. They might prioritize family over the higher salary. \n\nSo the behavior choice would be declining the promotion. The reason would be the importance of work-life balance and family time, even though the salary is higher. \n\nI need to make sure the JSON has the correct keys and the answer is in first-person. Let me check the keys again:",
+            "input_tokens": 254,
+            "new_tokens": 256,
+            "seconds": 173.97,
+            "tokens_per_second": 1.472
+          },
+          "revealed_belief": {
+            "prompt": "You are simulating one human user.\n\nBelow is the person's internal state.\n\nKnowledge:\n- Promosi jabatan ini akan menaikkan gaji secara signifikan.\n- Posisi baru menuntut jam kerja lebih panjang dan stres lebih tinggi.\n- Ia sering bilang waktu bersama keluarga sangat penting.\n\nOpinion:\n- Saya percaya work-life balance itu penting.\n\nQuestion:\nJika ditawari promosi itu sekarang, apa yang kemungkinan ia lakukan dan apa alasannya?\n\nComplete the next answer naturally as this person.\n\nAnswer:\nTherefore, this person would",
+            "continuation_text": "<think>\nOkay, let's see. The user is sim",
+            "input_tokens": 140,
+            "new_tokens": 12,
+            "seconds": 27.42,
+            "tokens_per_second": 0.438,
+            "token_steps": [
+              {
+                "step": 1,
+                "token_id": 151667,
+                "token_text": "<think>",
+                "token_probability": 0.99999893,
+                "top_candidates": [
+                  {
+                    "token_id": 151667,
+                    "token_text": "<think>",
+                    "probability": 0.99999893
+                  },
+                  {
+                    "token_id": 40279,
+                    "token_text": ".relu",
+                    "probability": 5e-08
+                  },
+                  {
+                    "token_id": 1436,
+                    "token_text": "._",
+                    "probability": 4e-08
+                  },
+                  {
+                    "token_id": 84939,
+                    "token_text": ".onerror",
+                    "probability": 4e-08
+                  },
+                  {
+                    "token_id": 85387,
+                    "token_text": ".$.",
+                    "probability": 4e-08
+                  }
+                ]
+              },
+              {
+                "step": 2,
+                "token_id": 198,
+                "token_text": "\n",
+                "token_probability": 0.9999994,
+                "top_candidates": [
+                  {
+                    "token_id": 198,
+                    "token_text": "\n",
+                    "probability": 0.9999994
+                  },
+                  {
+                    "token_id": 271,
+                    "token_text": "\n\n",
+                    "probability": 5.7e-07
+                  },
+                  {
+                    "token_id": 1406,
+                    "token_text": "\n\n\n",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 151668,
+                    "token_text": "</think>",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 319,
+                    "token_text": "\r\n",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "token_id": 32313,
+                "token_text": "Okay",
+                "token_probability": 0.99944204,
+                "top_candidates": [
+                  {
+                    "token_id": 32313,
+                    "token_text": "Okay",
+                    "probability": 0.99944204
+                  },
+                  {
+                    "token_id": 71486,
+                    "token_text": "Alright",
+                    "probability": 0.00055278
+                  },
+                  {
+                    "token_id": 93217,
+                    "token_text": "okay",
+                    "probability": 1.76e-06
+                  },
+                  {
+                    "token_id": 4416,
+                    "token_text": "So",
+                    "probability": 9.4e-07
+                  },
+                  {
+                    "token_id": 80022,
+                    "token_text": "Hmm",
+                    "probability": 4.4e-07
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "token_id": 11,
+                "token_text": ",",
+                "token_probability": 1.0,
+                "top_candidates": [
+                  {
+                    "token_id": 11,
+                    "token_text": ",",
+                    "probability": 1.0
+                  },
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 3837,
+                    "token_text": "，",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 1335,
+                    "token_text": ",\"",
+                    "probability": 0.0
+                  },
+                  {
+                    "token_id": 68785,
+                    "token_text": "،",
+                    "probability": 0.0
+                  }
+                ]
+              },
+              {
+                "step": 5,
+                "token_id": 1077,
+                "token_text": " let",
+                "token_probability": 0.68046474,
+                "top_candidates": [
+                  {
+                    "token_id": 1077,
+                    "token_text": " let",
+                    "probability": 0.68046474
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 0.25032899
+                  },
+                  {
+                    "token_id": 773,
+                    "token_text": " so",
+                    "probability": 0.06329308
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 0.00588717
+                  },
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 4.74e-06
+                  }
+                ]
+              },
+              {
+                "step": 6,
+                "token_id": 594,
+                "token_text": "'s",
+                "token_probability": 0.95791215,
+                "top_candidates": [
+                  {
+                    "token_id": 594,
+                    "token_text": "'s",
+                    "probability": 0.95791215
+                  },
+                  {
+                    "token_id": 752,
+                    "token_text": " me",
+                    "probability": 0.04208772
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 7e-08
+                  },
+                  {
+                    "token_id": 2660,
+                    "token_text": "me",
+                    "probability": 2e-08
+                  },
+                  {
+                    "token_id": 2776,
+                    "token_text": "'m",
+                    "probability": 1e-08
+                  }
+                ]
+              },
+              {
+                "step": 7,
+                "token_id": 1490,
+                "token_text": " see",
+                "token_probability": 0.50340629,
+                "top_candidates": [
+                  {
+                    "token_id": 1490,
+                    "token_text": " see",
+                    "probability": 0.50340629
+                  },
+                  {
+                    "token_id": 21403,
+                    "token_text": " tackle",
+                    "probability": 0.23779228
+                  },
+                  {
+                    "token_id": 1438,
+                    "token_text": " break",
+                    "probability": 0.14422832
+                  },
+                  {
+                    "token_id": 1430,
+                    "token_text": " try",
+                    "probability": 0.11232513
+                  },
+                  {
+                    "token_id": 7071,
+                    "token_text": " figure",
+                    "probability": 0.0011012
+                  }
+                ]
+              },
+              {
+                "step": 8,
+                "token_id": 13,
+                "token_text": ".",
+                "token_probability": 0.99999189,
+                "top_candidates": [
+                  {
+                    "token_id": 13,
+                    "token_text": ".",
+                    "probability": 0.99999189
+                  },
+                  {
+                    "token_id": 1588,
+                    "token_text": " here",
+                    "probability": 6.96e-06
+                  },
+                  {
+                    "token_id": 1128,
+                    "token_text": " what",
+                    "probability": 6.5e-07
+                  },
+                  {
+                    "token_id": 1112,
+                    "token_text": "...",
+                    "probability": 3.5e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 7e-08
+                  }
+                ]
+              },
+              {
+                "step": 9,
+                "token_id": 576,
+                "token_text": " The",
+                "token_probability": 0.9981876,
+                "top_candidates": [
+                  {
+                    "token_id": 576,
+                    "token_text": " The",
+                    "probability": 0.9981876
+                  },
+                  {
+                    "token_id": 358,
+                    "token_text": " I",
+                    "probability": 0.00132438
+                  },
+                  {
+                    "token_id": 2055,
+                    "token_text": " So",
+                    "probability": 0.00048721
+                  },
+                  {
+                    "token_id": 2657,
+                    "token_text": " User",
+                    "probability": 1.6e-07
+                  },
+                  {
+                    "token_id": 279,
+                    "token_text": " the",
+                    "probability": 1.6e-07
+                  }
+                ]
+              },
+              {
+                "step": 10,
+                "token_id": 1196,
+                "token_text": " user",
+                "token_probability": 0.98184985,
+                "top_candidates": [
+                  {
+                    "token_id": 1196,
+                    "token_text": " user",
+                    "probability": 0.98184985
+                  },
+                  {
+                    "token_id": 1697,
+                    "token_text": " person",
+                    "probability": 0.01798321
+                  },
+                  {
+                    "token_id": 3405,
+                    "token_text": " question",
+                    "probability": 0.0001373
+                  },
+                  {
+                    "token_id": 5306,
+                    "token_text": " internal",
+                    "probability": 2.386e-05
+                  },
+                  {
+                    "token_id": 3383,
+                    "token_text": " task",
+                    "probability": 4.15e-06
+                  }
+                ]
+              },
+              {
+                "step": 11,
+                "token_id": 374,
+                "token_text": " is",
+                "token_probability": 0.74514103,
+                "top_candidates": [
+                  {
+                    "token_id": 374,
+                    "token_text": " is",
+                    "probability": 0.74514103
+                  },
+                  {
+                    "token_id": 6801,
+                    "token_text": " wants",
+                    "probability": 0.24191187
+                  },
+                  {
+                    "token_id": 3897,
+                    "token_text": " provided",
+                    "probability": 0.00644673
+                  },
+                  {
+                    "token_id": 702,
+                    "token_text": " has",
+                    "probability": 0.00568922
+                  },
+                  {
+                    "token_id": 3880,
+                    "token_text": " needs",
+                    "probability": 0.00067948
+                  }
+                ]
+              },
+              {
+                "step": 12,
+                "token_id": 1643,
+                "token_text": " sim",
+                "token_probability": 0.68256193,
+                "top_candidates": [
+                  {
+                    "token_id": 1643,
+                    "token_text": " sim",
+                    "probability": 0.68256193
+                  },
+                  {
+                    "token_id": 10161,
+                    "token_text": " asking",
+                    "probability": 0.28453413
+                  },
+                  {
+                    "token_id": 4460,
+                    "token_text": " trying",
+                    "probability": 0.0264658
+                  },
+                  {
+                    "token_id": 264,
+                    "token_text": " a",
+                    "probability": 0.00191718
+                  },
+                  {
+                    "token_id": 9966,
+                    "token_text": " supposed",
+                    "probability": 0.00131765
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

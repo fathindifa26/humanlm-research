@@ -73,10 +73,23 @@ Masuk ke VM dulu, lalu jalankan:
 ```bash
 sudo apt-get update
 sudo apt-get install -y python3-venv git
+```
+
+Lalu clone repo riset ini:
+
+```bash
+git clone <URL_REPO_KAMU>
+cd humanlm-research
+```
+
+Setelah itu buat environment:
+
+```bash
 python3 -m venv ~/humanlm-bench
 source ~/humanlm-bench/bin/activate
 pip install --upgrade pip
-pip install torch transformers accelerate safetensors sentencepiece
+pip install -r requirements.txt
+pip install huggingface_hub
 ```
 
 Kalau ingin download dari Hugging Face lebih stabil dan cepat, set token:
@@ -114,15 +127,8 @@ source ~/.bashrc
 Dengan setup ini, setiap kali login SSH biasanya cukup:
 
 ```bash
+cd ~/humanlm-research
 source ~/humanlm-bench/bin/activate
-```
-
-## Upload Script Benchmark
-
-Dari laptop lokal, upload script benchmark ke VM:
-
-```bash
-gcloud compute scp --zone=asia-southeast1-a gcp_humanlm_benchmark.py data-processing:/tmp/gcp_humanlm_benchmark.py
 ```
 
 ## Jalankan Benchmark
@@ -130,8 +136,9 @@ gcloud compute scp --zone=asia-southeast1-a gcp_humanlm_benchmark.py data-proces
 Setelah SSH ke VM:
 
 ```bash
+cd ~/humanlm-research
 source ~/humanlm-bench/bin/activate
-python3 /tmp/gcp_humanlm_benchmark.py
+python3 gcp_humanlm_benchmark.py
 ```
 
 Kalau token belum disimpan di `~/.bashrc`, jalankan ini dulu:
@@ -170,8 +177,9 @@ Script ini bisa dijalankan untuk satu model atau beberapa model sekaligus.
 Di VM, jalankan:
 
 ```bash
+cd ~/humanlm-research
 source ~/humanlm-bench/bin/activate
-python3 /tmp/run_humanlm_poc.py --compare-default-models
+python3 run_humanlm_poc.py --compare-default-models
 ```
 
 Default pair yang dijalankan:
@@ -179,38 +187,24 @@ Default pair yang dijalankan:
 - `snap-stanford/humanlm-opinion`
 - `Qwen/Qwen3-8B`
 
-Kalau script belum ada di VM, upload dulu dari laptop lokal:
-
-```bash
-gcloud compute scp --zone=asia-southeast1-a run_humanlm_poc.py data-processing:/tmp/run_humanlm_poc.py
-gcloud compute scp --zone=asia-southeast1-a scenarios/poc_cognitive_dissonance.json data-processing:/tmp/poc_cognitive_dissonance.json
-```
-
-Lalu di VM, jalankan dengan path scenario yang sesuai:
-
-```bash
-source ~/humanlm-bench/bin/activate
-python3 /tmp/run_humanlm_poc.py --compare-default-models --scenarios /tmp/poc_cognitive_dissonance.json
-```
-
 ### Jalankan satu model saja
 
 Contoh HumanLM:
 
 ```bash
-python3 /tmp/run_humanlm_poc.py --model snap-stanford/humanlm-opinion
+python3 run_humanlm_poc.py --model snap-stanford/humanlm-opinion
 ```
 
 Contoh Qwen:
 
 ```bash
-python3 /tmp/run_humanlm_poc.py --model Qwen/Qwen3-8B
+python3 run_humanlm_poc.py --model Qwen/Qwen3-8B
 ```
 
 ### Jalankan beberapa model manual
 
 ```bash
-python3 /tmp/run_humanlm_poc.py --models snap-stanford/humanlm-opinion Qwen/Qwen3-8B
+python3 run_humanlm_poc.py --models snap-stanford/humanlm-opinion Qwen/Qwen3-8B
 ```
 
 ### Parameter penting
@@ -222,7 +216,7 @@ python3 /tmp/run_humanlm_poc.py --models snap-stanford/humanlm-opinion Qwen/Qwen
 Contoh:
 
 ```bash
-python3 /tmp/run_humanlm_poc.py --compare-default-models --revb-max-new-tokens 8 --revb-top-k 5
+python3 run_humanlm_poc.py --compare-default-models --revb-max-new-tokens 8 --revb-top-k 5
 ```
 
 ### Bentuk output
@@ -286,6 +280,7 @@ Ini memudahkan analisis manual sesudah run:
 - Prompt instruksi pada script sudah dibuat dalam bahasa Inggris agar lebih ramah untuk model kecil.
 - File scenario saat ini masih berisi konten state dalam bahasa Indonesia, jadi prompt belum sepenuhnya English end-to-end.
 - Run multi-model di CPU bisa cukup lama karena model dijalankan berurutan: HumanLM selesai dulu, lalu Qwen.
+- Pada run awal, bagian `RevB` kadang masih memunculkan continuation meta seperti "Okay, let's see..." alih-alih langsung perilaku. Jadi hasil `RevB` saat ini tetap berguna, tetapi perlu dibaca sebagai sinyal awal dan belum final secara metodologis.
 
 ## Catatan Penting
 
