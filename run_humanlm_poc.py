@@ -148,6 +148,7 @@ def run_revb(
     scenario: dict,
     max_new_tokens: int,
     top_k: int,
+    print_token_steps: bool,
 ) -> dict:
     prompt = build_revb_prompt(scenario)
     inputs = build_inputs(tokenizer, prompt)
@@ -193,6 +194,26 @@ def run_revb(
             }
         )
 
+        if print_token_steps:
+            top_preview_parts = []
+            for candidate_prob, candidate_id in zip(top_probs, top_ids):
+                candidate_text = decode_token(tokenizer, int(candidate_id)).replace("\n", "\\n")
+                top_preview_parts.append(f"{candidate_text}={candidate_prob.item():.4f}")
+            top_preview = ", ".join(top_preview_parts)
+            print(
+                json.dumps(
+                    {
+                        "stage": "revb_step",
+                        "scenario_id": scenario["id"],
+                        "step": step_idx,
+                        "chosen_token": decode_token(tokenizer, int(token_id)).replace("\n", "\\n"),
+                        "chosen_probability": round(chosen_prob, 8),
+                        "top_preview": top_preview,
+                    }
+                ),
+                flush=True,
+            )
+
     return {
         "prompt": prompt,
         "continuation_text": continuation_text,
@@ -222,6 +243,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-new-tokens", type=int, default=96)
     parser.add_argument("--revb-max-new-tokens", type=int, default=8)
     parser.add_argument("--revb-top-k", type=int, default=5)
+    parser.add_argument(
+        "--print-revb-steps",
+        action="store_true",
+        help="Print token-by-token RevB continuation logs so a run can be stopped early if the continuation is off-target.",
+    )
     return parser.parse_args()
 
 
@@ -271,6 +297,7 @@ def run_for_model(
             scenario,
             args.revb_max_new_tokens,
             args.revb_top_k,
+            args.print_revb_steps,
         )
 
         record = {
